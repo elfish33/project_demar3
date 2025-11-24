@@ -1,0 +1,72 @@
+@mixin fl-row {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+@mixin flex-col {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+@mixin prdCardFlex {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center; 
+    align-items: flex-start;
+    gap: 12px;
+}
+@mixin reviewCardFlex {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start; 
+    align-items: center;
+    gap: 8px;
+}
+
+@mixin sectionTitle {
+    font-size: 2.313rem; //37px
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -0.02rem;
+    color: #2A2625;
+}
+@mixin prdTitle {
+    font-size: 0.875rem; //14px
+    line-height: 100%;
+    letter-spacing: -0.02rem;
+}
+@mixin prdEng {
+    font-size: 0.875rem; //14px
+    line-height: 100%;
+    font-weight: 200;
+    letter-spacing: -0.02rem;
+}
+@mixin prdPrice {
+    font-size: 1rem; //14px
+    line-height: 100%;
+    font-weight: 200;
+    letter-spacing: -0.02rem;
+}
+@mixin viewMoreBtn {
+    font-size: 1rem; //14px
+    line-height: 100%;
+    font-weight: 200;
+    letter-spacing: -0.02rem;
+    color: #2A2625;
+}
+@mixin gnbMenuTitle {
+    font-weight: 500;
+    letter-spacing: -0.02rem;
+    color: #594632;
+}
+@mixin gnbMenuSubtitle {
+    font-weight: 300;
+    letter-spacing: -0.02rem;
+    font-size: 0.875rem;
+}
+@mixin gnbMenuSubCategory {
+    font-weight: 300;
+    letter-spacing: -0.02rem;
+    font-size: 0.813rem;
+    color: #2C2C2C;
+}
