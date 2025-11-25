@@ -14,6 +14,7 @@
     justify-content: center; 
     align-items: flex-start;
     gap: 12px;
+    width: max-content;
 }
 @mixin reviewCardFlex {
     display: flex;
@@ -25,10 +26,11 @@
 
 @mixin sectionTitle {
     font-size: 2.313rem; //37px
-    font-weight: 700;
+    font-weight: 500;
     line-height: 100%;
     letter-spacing: -0.02rem;
     color: #2A2625;
+    font-family: 'NanumMyeongjo';
 }
 @mixin prdTitle {
     font-size: 0.875rem; //14px
@@ -46,6 +48,21 @@
     line-height: 100%;
     font-weight: 200;
     letter-spacing: -0.02rem;
+}
+@mixin prdVol {
+    font-size: 0.75rem; //12px
+    line-height: 100%;
+    font-weight: 300;
+    letter-spacing: -0.02rem;
+}
+
+@mixin prdTag {
+    width: max-content; height: 22px;
+    padding: 4px 15px;
+    border-top-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+    font-size: 0.625rem; font-weight: 200;
+    line-height: 140%;
 }
 @mixin viewMoreBtn {
     font-size: 1rem; //14px
@@ -69,4 +86,9 @@
     letter-spacing: -0.02rem;
     font-size: 0.813rem;
     color: #2C2C2C;
+}
+@mixin bg_set {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

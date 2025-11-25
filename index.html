@@ -12,13 +12,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
-    <script src="./script/index.js"></script>
     <!--플러그인 필수 css cdn 연결-->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <!--플러그인 필수 JS cdn 연결-->
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- index.js 연결 -->
+    <script src="./script/index.js" defer></script>
 </head>
 <body>
     <header>
@@ -104,7 +105,6 @@
                     </button>
                     <form action="#" method="get" class="search_form">
                         <input type="text" name="menu_search_input" id="menu_search_input" placeholder="검색어를 입력해주세요" />
-                        <button type="button" id="clear_search_btn">✕</button>
                     </form>
                 </div>
                 <div class="rec_keywords">
@@ -124,14 +124,18 @@
     </header>
     <main>
         <section class="main_bnr">
-            <div class="swiper" id="main_bnr_swiper">
+            <div class="swiper" id="main_swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide main_bnr1">
                         <span>단 하나의 앰플,<br>
                             <em>피부의 결이 달라집니다</em></span>
                     </div>
-                    <div class="swiper-slide main_bnr1">slide2</div>
-                    <div class="swiper-slide main_bnr1">slide3</div>
+                    <div class="swiper-slide main_bnr2"><span>단 하나의 앰플,<br>
+                        <em>피부의 결이 달라집니다</em></span></div>
+                    <div class="swiper-slide main_bnr3"><span>단 하나의 앰플,<br>
+                        <em>피부의 결이 달라집니다</em></span></div>
+                    <div class="swiper-slide main_bnr4"><span>단 하나의 앰플,<br>
+                        <em>피부의 결이 달라집니다</em></span></div>
                 </div>
                 <div class="main_bnr_nav">
                     <div class="swiper-pagination"></div>
@@ -141,10 +145,10 @@
         </div>
         </section>
         <section class="best_sec">
-            <div class="best_right_wrap">
+            <div class="best_left_wrap">
                 <!-- background img --> <!-- position sticky -->
             </div>
-            <div class="best_left_wrap">
+            <div class="best_right_wrap">
                 <h2 class="sect_title">Best</h2>
                 <button type="button" class="more_btn">View more</button>
                 <div class="product_wrap">
@@ -217,7 +221,7 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section class="sub_bnr_sec">
             <div class="sub_bnr"></div><!-- background -->
         </section>
         <section class="recom_sec">
@@ -324,7 +328,11 @@
             <div class="bnr_wrap"><!-- background -->
                 <span>피부 위에 머무는 투명한 자신감 <br><em>ETSERE</em></span>
                 <div class="bnr_popup">
-                    <button type="button" id="bnr_plus_btn"></button>
+                    <button type="button" id="bnr_plus_btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="24" height="24" rx="12" fill="white"/>
+                        <path d="M12 5.5C12.1326 5.5 12.2598 5.55268 12.3536 5.64645C12.4473 5.74021 12.5 5.86739 12.5 6V11.5H18C18.1326 11.5 18.2598 11.5527 18.3536 11.6464C18.4473 11.7402 18.5 11.8674 18.5 12C18.5 12.1326 18.4473 12.2598 18.3536 12.3536C18.2598 12.4473 18.1326 12.5 18 12.5H12.5V18C12.5 18.1326 12.4473 18.2598 12.3536 18.3536C12.2598 18.4473 12.1326 18.5 12 18.5C11.8674 18.5 11.7402 18.4473 11.6464 18.3536C11.5527 18.2598 11.5 18.1326 11.5 18V12.5H6C5.86739 12.5 5.74021 12.4473 5.64645 12.3536C5.55268 12.2598 5.5 12.1326 5.5 12C5.5 11.8674 5.55268 11.7402 5.64645 11.6464C5.74021 11.5527 5.86739 11.5 6 11.5H11.5V6C11.5 5.86739 11.5527 5.74021 11.6464 5.64645C11.7402 5.55268 11.8674 5.5 12 5.5Z" fill="#73889D"/>
+                        </svg>
+                        </button>
                     <img src="./images/bnr_popup.png" alt="에트셀 멜라케어 토너" loading="lazy">
                     <h2 class="prd_name">에트셀 멜라케어 토너</h2>
                     <p class="prd_eng_name">ETSERE MELACARE TONER</p>
@@ -335,221 +343,263 @@
         <section class="new_sec">
             <h2 class="sect_title">New</h2>
             <button type="button" class="more_btn">View more</button>
-            <div class="swiper" id="swiper_new_prd">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide prd1">
-                        <a href="#" class="prd_link">
-                            <div class="product_card">
-                                <img src="./images/new_001.png" alt="에트셀 멜라토닉 앰플" class="best_prd_img" loading="lazy">
-                                <div class="prd_info">
-                                    <span class="prd_tag">미백 / 광채</span>
-                                    <h2 class="prd_name">에트셀 멜라토닉 앰플</h2>
-                                    <p class="prd_eng_name">ETSERE MELATONIC AMPOULE</p>
-                                    <p class="price">￦59,200</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide prd2">
-                        <a href="#" class="prd_link">
-                            <div class="product_card">
-                                <img src="./images/new_001.png" alt="에트셀 멜라케어 크렘" class="best_prd_img" loading="lazy">
-                                <div class="prd_info">
-                                    <span class="prd_tag">미백 / 광채</span>
-                                    <h2 class="prd_name">에트셀 멜라케어 크렘</h2>
-                                    <p class="prd_eng_name">ETSERE MELACARE CREME</p>
-                                    <p class="price">￦58,300</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide prd3">
-                        <a href="#" class="prd_link">
-                            <div class="product_card">
-                                <img src="./images/new_003.png" alt="에트셀 멜라케어 토너" class="best_prd_img" loading="lazy">
-                                <div class="prd_info">
-                                    <span class="prd_tag">미백 / 광채</span>
-                                    <h2 class="prd_name">에트셀 멜라케어 토너</h2>
-                                    <p class="prd_eng_name">ETSERE MELACARE TONER</p>
-                                    <div class="price_row">
-                                        <del class="del_price">38,000</del>
-                                        <p class="price">￦32,300</p>
+            <div class="swiper_box">
+                <div class="swiper" id="swiper_new_prd">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide prd1">
+                            <a href="#" class="prd_link">
+                                <div class="product_card">
+                                    <img src="./images/new_001.png" alt="에트셀 멜라토닉 앰플" class="best_prd_img" loading="lazy">
+                                    <div class="prd_info">
+                                        <span class="prd_tag">미백 / 광채</span>
+                                        <h2 class="prd_name">에트셀 멜라토닉 앰플</h2>
+                                        <p class="prd_eng_name">ETSERE MELATONIC AMPOULE</p>
+                                        <p class="price">￦59,200</p>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide prd4">
-                        <a href="#" class="prd_link">
-                            <div class="product_card">
-                                <img src="./images/new_001.png" alt="에트셀 멜라케어 크렘" class="best_prd_img" loading="lazy">
-                                <div class="prd_info">
-                                    <span class="prd_tag">미백 / 광채</span>
-                                    <h2 class="prd_name">에트셀 멜라케어 크렘</h2>
-                                    <p class="prd_eng_name">ETSERE MELACARE CREME</p>
-                                    <p class="price">￦58,300</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide prd5">
-                        <a href="#" class="prd_link">
-                            <div class="product_card">
-                                <img src="./images/new_001.png" alt="에트셀 멜라토닉 앰플" class="best_prd_img" loading="lazy">
-                                <div class="prd_info">
-                                    <span class="prd_tag">미백 / 광채</span>
-                                    <h2 class="prd_name">에트셀 멜라토닉 앰플</h2>
-                                    <p class="prd_eng_name">ETSERE MELATONIC AMPOULE</p>
-                                    <p class="price">￦59,200</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide prd6">
-                        <a href="#" class="prd_link">
-                            <div class="product_card">
-                                <img src="./images/new_001.png" alt="에트셀 멜라케어 크렘" class="best_prd_img" loading="lazy">
-                                <div class="prd_info">
-                                    <span class="prd_tag">미백 / 광채</span>
-                                    <h2 class="prd_name">에트셀 멜라케어 크렘</h2>
-                                    <p class="prd_eng_name">ETSERE MELACARE CREME</p>
-                                    <p class="price">￦58,300</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide prd7">
-                        <a href="#" class="prd_link">
-                            <div class="product_card">
-                                <img src="./images/new_003.png" alt="에트셀 멜라케어 토너" class="best_prd_img" loading="lazy">
-                                <div class="prd_info">
-                                    <span class="prd_tag">미백 / 광채</span>
-                                    <h2 class="prd_name">에트셀 멜라케어 토너</h2>
-                                    <p class="prd_eng_name">ETSERE MELACARE TONER</p>
-                                    <div class="price_row">
-                                        <del class="del_price">38,000</del>
-                                        <p class="price">￦32,300</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide prd2">
+                            <a href="#" class="prd_link">
+                                <div class="product_card">
+                                    <img src="./images/new_002.png" alt="에트셀 멜라케어 크렘" class="best_prd_img" loading="lazy">
+                                    <div class="prd_info">
+                                        <span class="prd_tag">미백 / 광채</span>
+                                        <h2 class="prd_name">에트셀 멜라케어 크렘</h2>
+                                        <p class="prd_eng_name">ETSERE MELACARE CREME</p>
+                                        <p class="price">￦58,300</p>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide prd8">
-                        <a href="#" class="prd_link">
-                            <div class="product_card">
-                                <img src="./images/new_001.png" alt="에트셀 멜라케어 크렘" class="best_prd_img" loading="lazy">
-                                <div class="prd_info">
-                                    <span class="prd_tag">미백 / 광채</span>
-                                    <h2 class="prd_name">에트셀 멜라케어 크렘</h2>
-                                    <p class="prd_eng_name">ETSERE MELACARE CREME</p>
-                                    <p class="price">￦58,300</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide prd3">
+                            <a href="#" class="prd_link">
+                                <div class="product_card">
+                                    <img src="./images/new_003.png" alt="에트셀 멜라케어 토너" class="best_prd_img" loading="lazy">
+                                    <div class="prd_info">
+                                        <span class="prd_tag">미백 / 광채</span>
+                                        <h2 class="prd_name">에트셀 멜라케어 토너</h2>
+                                        <p class="prd_eng_name">ETSERE MELACARE TONER</p>
+                                        <div class="price_row">
+                                            <del class="del_price">38,000</del>
+                                            <p class="price">￦32,300</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
+                        <div class="swiper-slide prd4">
+                            <a href="#" class="prd_link">
+                                <div class="product_card">
+                                    <img src="./images/new_004.png" alt="에트셀 멜라케어 크렘" class="best_prd_img" loading="lazy">
+                                    <div class="prd_info">
+                                        <span class="prd_tag">미백 / 광채</span>
+                                        <h2 class="prd_name">에트셀 멜라케어 크렘</h2>
+                                        <p class="prd_eng_name">ETSERE MELACARE CREME</p>
+                                        <p class="price">￦58,300</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide prd5">
+                            <a href="#" class="prd_link">
+                                <div class="product_card">
+                                    <img src="./images/new_001.png" alt="에트셀 멜라토닉 앰플" class="best_prd_img" loading="lazy">
+                                    <div class="prd_info">
+                                        <span class="prd_tag">미백 / 광채</span>
+                                        <h2 class="prd_name">에트셀 멜라토닉 앰플</h2>
+                                        <p class="prd_eng_name">ETSERE MELATONIC AMPOULE</p>
+                                        <p class="price">￦59,200</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide prd6">
+                            <a href="#" class="prd_link">
+                                <div class="product_card">
+                                    <img src="./images/new_002.png" alt="에트셀 멜라케어 크렘" class="best_prd_img" loading="lazy">
+                                    <div class="prd_info">
+                                        <span class="prd_tag">미백 / 광채</span>
+                                        <h2 class="prd_name">에트셀 멜라케어 크렘</h2>
+                                        <p class="prd_eng_name">ETSERE MELACARE CREME</p>
+                                        <p class="price">￦58,300</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide prd7">
+                            <a href="#" class="prd_link">
+                                <div class="product_card">
+                                    <img src="./images/new_003.png" alt="에트셀 멜라케어 토너" class="best_prd_img" loading="lazy">
+                                    <div class="prd_info">
+                                        <span class="prd_tag">미백 / 광채</span>
+                                        <h2 class="prd_name">에트셀 멜라케어 토너</h2>
+                                        <p class="prd_eng_name">ETSERE MELACARE TONER</p>
+                                        <div class="price_row">
+                                            <del class="del_price">38,000</del>
+                                            <p class="price">￦32,300</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide prd8">
+                            <a href="#" class="prd_link">
+                                <div class="product_card">
+                                    <img src="./images/new_004.png" alt="에트셀 멜라케어 크렘" class="best_prd_img" loading="lazy">
+                                    <div class="prd_info">
+                                        <span class="prd_tag">미백 / 광채</span>
+                                        <h2 class="prd_name">에트셀 멜라케어 크렘</h2>
+                                        <p class="prd_eng_name">ETSERE MELACARE CREME</p>
+                                        <p class="price">￦58,300</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
             </div>
         </section>
         <section class="essential_sec">
             <div class="left_wrap"></div><!-- bg -->
             <div class="right_wrap">
-                <h2 class="sect_title">New</h2>
+                <div class="title_box">
+                    <h2 class="sect_title">Essential</h2>
                 <button type="button" class="more_btn">View more</button>
-                <div class="swiper" id="essential_swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide ess1">
-                            <a href="#" class="prd_link">
-                                <div class="product_card">
-                                    <img src="./images/essential_001.png" alt="문제성지성 시타 듀 세트" class="best_prd_img" loading="lazy">
-                                    <div class="prd_info">
-                                        <span class="prd_tag">문제성지성</span>
-                                        <h2 class="prd_name">문제성지성 시타 듀 세트</h2>
-                                        <p class="price">￦207,450</p>
+                </div>
+                <div class="swiper_box">
+                    <div class="swiper" id="essential_swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide ess1">
+                                <a href="#" class="prd_link">
+                                    <div class="product_card">
+                                        <img src="./images/essential_001.png" alt="문제성지성 시타 듀 세트" class="best_prd_img" loading="lazy">
+                                        <div class="prd_info">
+                                            <span class="prd_tag">문제성지성</span>
+                                            <h2 class="prd_name">문제성지성 시타 듀 세트</h2>
+                                            <p class="price">￦207,450</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide ess2">
-                            <a href="#" class="prd_link">
-                                <div class="product_card">
-                                    <img src="./images/essential_002.png" alt="문제성지성 시타 듀 멀티세트" class="best_prd_img" loading="lazy">
-                                    <div class="prd_info">
-                                        <span class="prd_tag">문제성지성</span>
-                                        <h2 class="prd_name">문제성지성 시타 듀 멀티세트</h2>
-                                        <p class="price">￦128,700</p>
+                                </a>
+                            </div>
+                            <div class="swiper-slide ess2">
+                                <a href="#" class="prd_link">
+                                    <div class="product_card">
+                                        <img src="./images/essential_002.png" alt="문제성지성 시타 듀 멀티세트" class="best_prd_img" loading="lazy">
+                                        <div class="prd_info">
+                                            <span class="prd_tag">문제성지성</span>
+                                            <h2 class="prd_name">문제성지성 시타 듀 멀티세트</h2>
+                                            <p class="price">￦128,700</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide ess3">
-                            <a href="#" class="prd_link">
-                                <div class="product_card">
-                                    <img src="./images/essential_003.png" alt="시타 듀 세범 피니싱" class="best_prd_img" loading="lazy">
-                                    <div class="prd_info">
-                                        <span class="prd_tag">문제성지성</span>
-                                        <h2 class="prd_name">시타 듀 세범 피니싱</h2>
-                                        <p class="price">￦128,310</p>
+                                </a>
+                            </div>
+                            <div class="swiper-slide ess3">
+                                <a href="#" class="prd_link">
+                                    <div class="product_card">
+                                        <img src="./images/essential_003.png" alt="시타 듀 세범 피니싱" class="best_prd_img" loading="lazy">
+                                        <div class="prd_info">
+                                            <span class="prd_tag">문제성지성</span>
+                                            <h2 class="prd_name">시타 듀 세범 피니싱</h2>
+                                            <p class="price">￦128,310</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide ess4">
-                            <a href="#" class="prd_link">
-                                <div class="product_card">
-                                    <img src="./images/essential_001.png" alt="문제성지성 시타 듀 세트" class="best_prd_img" loading="lazy">
-                                    <div class="prd_info">
-                                        <span class="prd_tag">문제성지성</span>
-                                        <h2 class="prd_name">문제성지성 시타 듀 세트</h2>
-                                        <p class="price">￦207,450</p>
+                                </a>
+                            </div>
+                            <div class="swiper-slide ess4">
+                                <a href="#" class="prd_link">
+                                    <div class="product_card">
+                                        <img src="./images/essential_001.png" alt="문제성지성 시타 듀 세트" class="best_prd_img" loading="lazy">
+                                        <div class="prd_info">
+                                            <span class="prd_tag">문제성지성</span>
+                                            <h2 class="prd_name">문제성지성 시타 듀 세트</h2>
+                                            <p class="price">￦207,450</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide ess5">
-                            <a href="#" class="prd_link">
-                                <div class="product_card">
-                                    <img src="./images/essential_002.png" alt="문제성지성 시타 듀 멀티세트" class="best_prd_img" loading="lazy">
-                                    <div class="prd_info">
-                                        <span class="prd_tag">문제성지성</span>
-                                        <h2 class="prd_name">문제성지성 시타 듀 멀티세트</h2>
-                                        <p class="price">￦128,700</p>
+                                </a>
+                            </div>
+                            <div class="swiper-slide ess5">
+                                <a href="#" class="prd_link">
+                                    <div class="product_card">
+                                        <img src="./images/essential_002.png" alt="문제성지성 시타 듀 멀티세트" class="best_prd_img" loading="lazy">
+                                        <div class="prd_info">
+                                            <span class="prd_tag">문제성지성</span>
+                                            <h2 class="prd_name">문제성지성 시타 듀 멀티세트</h2>
+                                            <p class="price">￦128,700</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide ess6">
-                            <a href="#" class="prd_link">
-                                <div class="product_card">
-                                    <img src="./images/essential_003.png" alt="시타 듀 세범 피니싱" class="best_prd_img" loading="lazy">
-                                    <div class="prd_info">
-                                        <span class="prd_tag">문제성지성</span>
-                                        <h2 class="prd_name">시타 듀 세범 피니싱</h2>
-                                        <p class="price">￦128,310</p>
+                                </a>
+                            </div>
+                            <div class="swiper-slide ess6">
+                                <a href="#" class="prd_link">
+                                    <div class="product_card">
+                                        <img src="./images/essential_003.png" alt="시타 듀 세범 피니싱" class="best_prd_img" loading="lazy">
+                                        <div class="prd_info">
+                                            <span class="prd_tag">문제성지성</span>
+                                            <h2 class="prd_name">시타 듀 세범 피니싱</h2>
+                                            <p class="price">￦128,310</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
+                        <div class="swiper-scrollbar"></div>
                     </div>
-                    <div class="swiper-scrollbar"></div>
-            </div>
+                </div>
             </div>
         </section>
         <section class="review_sec">
             <h2 class="sect_title">Review</h2>
             <button type="button" class="more_btn">View more</button>
-            <div class="swiper" id="review_swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide review1">
-                        <img src="./images/review_001.png" alt="리뷰 사진">
-                        <div class="review_info">
-                            <div class="stars_name_date">
-                                <div class="score_name">
-                                    <div class="stars_box">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
+            <div class="swiper_box">
+                <div class="swiper" id="review_swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide review1">
+                            <img src="./images/review_001.png" alt="리뷰 사진">
+                            <div class="review_info">
+                                <div class="stars_name_date">
+                                    <div class="score_name">
+                                        <div class="stars_box">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
+                                                </svg>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
+                                                    </svg>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
                                             </svg>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
+                                            </svg>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
+                                            </svg>
+                                        </div>
+                                        <h3 class="reviewer_name">김*민 고객님</h3>
+                                    </div>
+                                    <div class="date">2025.10.24</div>
+                                </div>
+                                <div class="review_content">
+                                    <p>에센스는 다 필요 없고 무조건 여기 것만 써요. 제가 사용해 본 에센스 중에 제일 좋습니다.</p>
+                                </div>
+                                <div class="review_prd_wrap">
+                                    <img src="./images/review_thumbnail_001.png" alt="에스투드 프로텍터 5.2 미니">
+                                    <div class="prd_info">
+                                        <h2 class="prd_name">에스투드 프로텍터 5.2 미니</h2>
+                                        <p class="price">￦20,450</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide review2">
+                            <img src="./images/review_002.png" alt="리뷰 사진">
+                            <div class="review_info">
+                                <div class="stars_name_date">
+                                    <div class="score_name">
+                                        <div class="stars_box">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
                                                 </svg>
@@ -562,32 +612,32 @@
                                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
                                                             </svg>
+                                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
+                                                                </svg>
+                                        </div>
+                                        <h3 class="reviewer_name">김*민 고객님</h3>
                                     </div>
-                                    <h3 class="reviewer_name">김*민 고객님</h3>
+                                    <div class="date">2025.10.24</div>
                                 </div>
-                                <div class="date">2025.10.24</div>
-                            </div>
-                            <div class="review_content">
-                                <p>에센스는 다 필요 없고 무조건 여기 것만 써요. 제가 사용해 본 에센스 중에 제일 좋습니다.</p>
-                            </div>
-                            <div class="review_prd_wrap">
-                                <img src="./images/review_thumbnail_001.png" alt="에스투드 프로텍터 5.2 미니">
-                                <div class="prd_info">
-                                    <h2 class="prd_name">에스투드 프로텍터 5.2 미니</h2>
-                                    <p class="price">￦20,450</p>
+                                <div class="review_content">
+                                    <p>에센스는 다 필요 없고 무조건 여기 것만 써요. 제가 사용해 본 에센스 중에 제일 좋습니다.</p>
+                                </div>
+                                <div class="review_prd_wrap">
+                                    <img src="./images/review_thumbnail_001.png" alt="에스투드 프로텍터 5.2 미니">
+                                    <div class="prd_info">
+                                        <h2 class="prd_name">에스투드 프로텍터 5.2 미니</h2>
+                                        <p class="price">￦20,450</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide review2">
-                        <img src="./images/review_002.png" alt="리뷰 사진">
-                        <div class="review_info">
-                            <div class="stars_name_date">
-                                <div class="score_name">
-                                    <div class="stars_box">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
-                                            </svg>
+                        <div class="swiper-slide review3">
+                            <img src="./images/review_003.png" alt="리뷰 사진">
+                            <div class="review_info">
+                                <div class="stars_name_date">
+                                    <div class="score_name">
+                                        <div class="stars_box">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
                                                 </svg>
@@ -600,32 +650,32 @@
                                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
                                                             </svg>
+                                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
+                                                                </svg>
+                                        </div>
+                                        <h3 class="reviewer_name">김*민 고객님</h3>
                                     </div>
-                                    <h3 class="reviewer_name">김*민 고객님</h3>
+                                    <div class="date">2025.10.24</div>
                                 </div>
-                                <div class="date">2025.10.24</div>
-                            </div>
-                            <div class="review_content">
-                                <p>에센스는 다 필요 없고 무조건 여기 것만 써요. 제가 사용해 본 에센스 중에 제일 좋습니다.</p>
-                            </div>
-                            <div class="review_prd_wrap">
-                                <img src="./images/review_thumbnail_001.png" alt="에스투드 프로텍터 5.2 미니">
-                                <div class="prd_info">
-                                    <h2 class="prd_name">에스투드 프로텍터 5.2 미니</h2>
-                                    <p class="price">￦20,450</p>
+                                <div class="review_content">
+                                    <p>에센스는 다 필요 없고 무조건 여기 것만 써요. 제가 사용해 본 에센스 중에 제일 좋습니다.</p>
+                                </div>
+                                <div class="review_prd_wrap">
+                                    <img src="./images/review_thumbnail_001.png" alt="에스투드 프로텍터 5.2 미니">
+                                    <div class="prd_info">
+                                        <h2 class="prd_name">에스투드 프로텍터 5.2 미니</h2>
+                                        <p class="price">￦20,450</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide review3">
-                        <img src="./images/review_003.png" alt="리뷰 사진">
-                        <div class="review_info">
-                            <div class="stars_name_date">
-                                <div class="score_name">
-                                    <div class="stars_box">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
-                                            </svg>
+                        <div class="swiper-slide review4">
+                            <img src="./images/review_004.png" alt="리뷰 사진">
+                            <div class="review_info">
+                                <div class="stars_name_date">
+                                    <div class="score_name">
+                                        <div class="stars_box">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
                                                 </svg>
@@ -638,32 +688,32 @@
                                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
                                                             </svg>
+                                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
+                                                                </svg>
+                                        </div>
+                                        <h3 class="reviewer_name">김*민 고객님</h3>
                                     </div>
-                                    <h3 class="reviewer_name">김*민 고객님</h3>
+                                    <div class="date">2025.10.24</div>
                                 </div>
-                                <div class="date">2025.10.24</div>
-                            </div>
-                            <div class="review_content">
-                                <p>에센스는 다 필요 없고 무조건 여기 것만 써요. 제가 사용해 본 에센스 중에 제일 좋습니다.</p>
-                            </div>
-                            <div class="review_prd_wrap">
-                                <img src="./images/review_thumbnail_001.png" alt="에스투드 프로텍터 5.2 미니">
-                                <div class="prd_info">
-                                    <h2 class="prd_name">에스투드 프로텍터 5.2 미니</h2>
-                                    <p class="price">￦20,450</p>
+                                <div class="review_content">
+                                    <p>에센스는 다 필요 없고 무조건 여기 것만 써요. 제가 사용해 본 에센스 중에 제일 좋습니다.</p>
+                                </div>
+                                <div class="review_prd_wrap">
+                                    <img src="./images/review_thumbnail_001.png" alt="에스투드 프로텍터 5.2 미니">
+                                    <div class="prd_info">
+                                        <h2 class="prd_name">에스투드 프로텍터 5.2 미니</h2>
+                                        <p class="price">￦20,450</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide review4">
-                        <img src="./images/review_004.png" alt="리뷰 사진">
-                        <div class="review_info">
-                            <div class="stars_name_date">
-                                <div class="score_name">
-                                    <div class="stars_box">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
-                                            </svg>
+                        <div class="swiper-slide review5">
+                            <img src="./images/review_001.png" alt="리뷰 사진">
+                            <div class="review_info">
+                                <div class="stars_name_date">
+                                    <div class="score_name">
+                                        <div class="stars_box">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
                                                 </svg>
@@ -676,32 +726,32 @@
                                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
                                                             </svg>
+                                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
+                                                                </svg>
+                                        </div>
+                                        <h3 class="reviewer_name">김*민 고객님</h3>
                                     </div>
-                                    <h3 class="reviewer_name">김*민 고객님</h3>
+                                    <div class="date">2025.10.24</div>
                                 </div>
-                                <div class="date">2025.10.24</div>
-                            </div>
-                            <div class="review_content">
-                                <p>에센스는 다 필요 없고 무조건 여기 것만 써요. 제가 사용해 본 에센스 중에 제일 좋습니다.</p>
-                            </div>
-                            <div class="review_prd_wrap">
-                                <img src="./images/review_thumbnail_001.png" alt="에스투드 프로텍터 5.2 미니">
-                                <div class="prd_info">
-                                    <h2 class="prd_name">에스투드 프로텍터 5.2 미니</h2>
-                                    <p class="price">￦20,450</p>
+                                <div class="review_content">
+                                    <p>에센스는 다 필요 없고 무조건 여기 것만 써요. 제가 사용해 본 에센스 중에 제일 좋습니다.</p>
+                                </div>
+                                <div class="review_prd_wrap">
+                                    <img src="./images/review_thumbnail_001.png" alt="에스투드 프로텍터 5.2 미니">
+                                    <div class="prd_info">
+                                        <h2 class="prd_name">에스투드 프로텍터 5.2 미니</h2>
+                                        <p class="price">￦20,450</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide review5">
-                        <img src="./images/review_005.png" alt="리뷰 사진">
-                        <div class="review_info">
-                            <div class="stars_name_date">
-                                <div class="score_name">
-                                    <div class="stars_box">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
-                                            </svg>
+                        <div class="swiper-slide review6">
+                            <img src="./images/review_001.png" alt="리뷰 사진">
+                            <div class="review_info">
+                                <div class="stars_name_date">
+                                    <div class="score_name">
+                                        <div class="stars_box">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
                                                 </svg>
@@ -714,32 +764,32 @@
                                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
                                                             </svg>
+                                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
+                                                                </svg>
+                                        </div>
+                                        <h3 class="reviewer_name">김*민 고객님</h3>
                                     </div>
-                                    <h3 class="reviewer_name">김*민 고객님</h3>
+                                    <div class="date">2025.10.24</div>
                                 </div>
-                                <div class="date">2025.10.24</div>
-                            </div>
-                            <div class="review_content">
-                                <p>에센스는 다 필요 없고 무조건 여기 것만 써요. 제가 사용해 본 에센스 중에 제일 좋습니다.</p>
-                            </div>
-                            <div class="review_prd_wrap">
-                                <img src="./images/review_thumbnail_001.png" alt="에스투드 프로텍터 5.2 미니">
-                                <div class="prd_info">
-                                    <h2 class="prd_name">에스투드 프로텍터 5.2 미니</h2>
-                                    <p class="price">￦20,450</p>
+                                <div class="review_content">
+                                    <p>에센스는 다 필요 없고 무조건 여기 것만 써요. 제가 사용해 본 에센스 중에 제일 좋습니다.</p>
+                                </div>
+                                <div class="review_prd_wrap">
+                                    <img src="./images/review_thumbnail_001.png" alt="에스투드 프로텍터 5.2 미니">
+                                    <div class="prd_info">
+                                        <h2 class="prd_name">에스투드 프로텍터 5.2 미니</h2>
+                                        <p class="price">￦20,450</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide review6">
-                        <img src="./images/review_001.png" alt="리뷰 사진">
-                        <div class="review_info">
-                            <div class="stars_name_date">
-                                <div class="score_name">
-                                    <div class="stars_box">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
-                                            </svg>
+                        <div class="swiper-slide review7">
+                            <img src="./images/review_002.png" alt="리뷰 사진">
+                            <div class="review_info">
+                                <div class="stars_name_date">
+                                    <div class="score_name">
+                                        <div class="stars_box">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
                                                 </svg>
@@ -752,32 +802,32 @@
                                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
                                                             </svg>
+                                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
+                                                                </svg>
+                                        </div>
+                                        <h3 class="reviewer_name">김*민 고객님</h3>
                                     </div>
-                                    <h3 class="reviewer_name">김*민 고객님</h3>
+                                    <div class="date">2025.10.24</div>
                                 </div>
-                                <div class="date">2025.10.24</div>
-                            </div>
-                            <div class="review_content">
-                                <p>에센스는 다 필요 없고 무조건 여기 것만 써요. 제가 사용해 본 에센스 중에 제일 좋습니다.</p>
-                            </div>
-                            <div class="review_prd_wrap">
-                                <img src="./images/review_thumbnail_001.png" alt="에스투드 프로텍터 5.2 미니">
-                                <div class="prd_info">
-                                    <h2 class="prd_name">에스투드 프로텍터 5.2 미니</h2>
-                                    <p class="price">￦20,450</p>
+                                <div class="review_content">
+                                    <p>에센스는 다 필요 없고 무조건 여기 것만 써요. 제가 사용해 본 에센스 중에 제일 좋습니다.</p>
+                                </div>
+                                <div class="review_prd_wrap">
+                                    <img src="./images/review_thumbnail_001.png" alt="에스투드 프로텍터 5.2 미니">
+                                    <div class="prd_info">
+                                        <h2 class="prd_name">에스투드 프로텍터 5.2 미니</h2>
+                                        <p class="price">￦20,450</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide review7">
-                        <img src="./images/review_002.png" alt="리뷰 사진">
-                        <div class="review_info">
-                            <div class="stars_name_date">
-                                <div class="score_name">
-                                    <div class="stars_box">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
-                                            </svg>
+                        <div class="swiper-slide review8">
+                            <img src="./images/review_003.png" alt="리뷰 사진">
+                            <div class="review_info">
+                                <div class="stars_name_date">
+                                    <div class="score_name">
+                                        <div class="stars_box">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
                                                 </svg>
@@ -790,64 +840,30 @@
                                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
                                                             </svg>
+                                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
+                                                                </svg>
+                                        </div>
+                                        <h3 class="reviewer_name">김*민 고객님</h3>
                                     </div>
-                                    <h3 class="reviewer_name">김*민 고객님</h3>
+                                    <div class="date">2025.10.24</div>
                                 </div>
-                                <div class="date">2025.10.24</div>
-                            </div>
-                            <div class="review_content">
-                                <p>에센스는 다 필요 없고 무조건 여기 것만 써요. 제가 사용해 본 에센스 중에 제일 좋습니다.</p>
-                            </div>
-                            <div class="review_prd_wrap">
-                                <img src="./images/review_thumbnail_001.png" alt="에스투드 프로텍터 5.2 미니">
-                                <div class="prd_info">
-                                    <h2 class="prd_name">에스투드 프로텍터 5.2 미니</h2>
-                                    <p class="price">￦20,450</p>
+                                <div class="review_content">
+                                    <p>에센스는 다 필요 없고 무조건 여기 것만 써요. 제가 사용해 본 에센스 중에 제일 좋습니다.</p>
+                                </div>
+                                <div class="review_prd_wrap">
+                                    <img src="./images/review_thumbnail_001.png" alt="에스투드 프로텍터 5.2 미니">
+                                    <div class="prd_info">
+                                        <h2 class="prd_name">에스투드 프로텍터 5.2 미니</h2>
+                                        <p class="price">￦20,450</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide review8">
-                        <img src="./images/review_003.png" alt="리뷰 사진">
-                        <div class="review_info">
-                            <div class="stars_name_date">
-                                <div class="score_name">
-                                    <div class="stars_box">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
-                                            </svg>
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
-                                                </svg>
-                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
-                                                    </svg>
-                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
-                                                        </svg>
-                                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M9.04897 2.92708C9.34897 2.00608 10.652 2.00608 10.951 2.92708L12.021 6.21908C12.0863 6.41957 12.2134 6.59426 12.384 6.71818C12.5547 6.84211 12.7601 6.90892 12.971 6.90908H16.433C17.402 6.90908 17.804 8.14908 17.021 8.71908L14.221 10.7531C14.05 10.8771 13.9227 11.0521 13.8573 11.2529C13.7919 11.4538 13.7918 11.6702 13.857 11.8711L14.927 15.1631C15.227 16.0841 14.172 16.8511 13.387 16.2811L10.587 14.2471C10.4162 14.1231 10.2105 14.0563 9.99947 14.0563C9.78842 14.0563 9.58277 14.1231 9.41197 14.2471L6.61197 16.2811C5.82797 16.8511 4.77397 16.0841 5.07297 15.1631L6.14297 11.8711C6.20815 11.6702 6.20803 11.4538 6.14264 11.2529C6.07725 11.0521 5.94994 10.8771 5.77897 10.7531L2.97997 8.72008C2.19697 8.15008 2.59997 6.91008 3.56797 6.91008H7.02897C7.24002 6.91013 7.44568 6.84342 7.6165 6.71948C7.78732 6.59554 7.91455 6.42073 7.97997 6.22008L9.04997 2.92808L9.04897 2.92708Z" fill="#594632"/>
-                                                            </svg>
-                                    </div>
-                                    <h3 class="reviewer_name">김*민 고객님</h3>
-                                </div>
-                                <div class="date">2025.10.24</div>
-                            </div>
-                            <div class="review_content">
-                                <p>에센스는 다 필요 없고 무조건 여기 것만 써요. 제가 사용해 본 에센스 중에 제일 좋습니다.</p>
-                            </div>
-                            <div class="review_prd_wrap">
-                                <img src="./images/review_thumbnail_001.png" alt="에스투드 프로텍터 5.2 미니">
-                                <div class="prd_info">
-                                    <h2 class="prd_name">에스투드 프로텍터 5.2 미니</h2>
-                                    <p class="price">￦20,450</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
             </div>
         </section>
         <footer>
