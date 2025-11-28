@@ -153,7 +153,7 @@ body main * .prd_link {
   display: block;
 }
 body main * .sect_title {
-  font-size: clamp(1.5rem, 3vw, 2.313rem);
+  font-size: 2.313rem;
   font-weight: 500;
   line-height: 100%;
   letter-spacing: -0.02rem;
@@ -161,12 +161,12 @@ body main * .sect_title {
   font-family: "NanumMyeongjo";
 }
 body main * .prd_name {
-  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  font-size: 0.875rem;
   line-height: 100%;
   letter-spacing: -0.02rem;
 }
 body main * .prd_eng_name {
-  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  font-size: 0.875rem;
   line-height: 100%;
   font-weight: 200;
   letter-spacing: -0.02rem;
@@ -182,13 +182,13 @@ body main * .prd_tag {
   line-height: 140%;
 }
 body main * .prd_volume {
-  font-size: clamp(0.625rem, 2vw, 0.75rem);
+  font-size: 0.75rem;
   line-height: 100%;
   font-weight: 300;
   letter-spacing: -0.02rem;
 }
 body main * .price {
-  font-size: clamp(0.875rem, 2vw, 1rem);
+  font-size: 1rem;
   line-height: 100%;
   font-weight: 200;
   letter-spacing: -0.02rem;
@@ -200,12 +200,6 @@ body main * .product_card {
   align-items: flex-start;
   gap: 12px;
   width: max-content;
-}
-body main * .best_prd_img {
-  width: 100%;
-  aspect-ratio: 380/379;
-  object-fit: cover;
-  display: block;
 }
 body main * .more_btn {
   font-size: 1rem;
@@ -242,7 +236,7 @@ body main .main_bnr #main_swiper .swiper-wrapper .swiper-slide span {
   position: absolute;
   left: 386px;
   bottom: 325px;
-  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  font-size: 2.5rem;
   color: #fff;
   font-family: "NanumMyeongjo";
   line-height: 150%;
@@ -316,11 +310,8 @@ body main .main_bnr #main_swiper .main_bnr_nav .swiper-button-next svg {
   display: none;
 }
 body main .best_sec {
-  /* display: grid;
-  grid-template-columns: 1fr 2fr; */
-  display: flex;
-  flex-flow: row nowrap;
-  max-width: 1920px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 body main .best_sec .best_left_wrap {
   background-position: center;
@@ -329,8 +320,6 @@ body main .best_sec .best_left_wrap {
   background-image: url(../images/best_bg.png);
   max-width: 959px;
   max-height: 918px;
-  width: 100%;
-  min-width: 314px;
   aspect-ratio: 959/918;
   border-bottom-right-radius: 110px;
   border-top-right-radius: 110px;
@@ -338,29 +327,11 @@ body main .best_sec .best_left_wrap {
   top: 0;
 }
 body main .best_sec .best_right_wrap {
-  max-width: calc(100% - 1019px);
-  width: 100%;
   padding: 30px 30px 70px 30px;
 }
-body main .best_sec .best_right_wrap .product_wrap {
-  width: 100%;
-}
 body main .best_sec .best_right_wrap .product_wrap .product_row {
-  width: 100%;
   display: flex;
   flex-flow: row nowrap;
-}
-body main .best_sec .best_right_wrap .product_wrap .product_row .prd_link.card_3, body main .best_sec .best_right_wrap .product_wrap .product_row .prd_link.card_6, body main .best_sec .best_right_wrap .product_wrap .product_row .prd_link.card_9 {
-  display: none;
-}
-body main .best_sec .best_right_wrap .product_wrap .row1 .card3 {
-  display: none;
-}
-body main .best_sec .best_right_wrap .product_wrap .row2 .card6 {
-  display: none;
-}
-body main .best_sec .best_right_wrap .product_wrap .row2 .card9 {
-  display: none;
 }
 body main .sub_bnr_sec {
   padding: 50px 0;
@@ -389,11 +360,9 @@ body main .recom_sec .product_wrap {
 body main .recom_sec .product_wrap .product_row {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
 }
 body main .recom_sec .product_wrap .product_row .prd_link .product_card > img {
-  aspect-ratio: 380/379;
-  width: 380px;
+  width: 100%;
 }
 body main .recom_sec .product_wrap .product_row .prd_link .product_card .prd_info .prd_tag {
   background-color: rgba(14, 162, 102, 0.1);
@@ -416,7 +385,7 @@ body main .etsere_bnr .bnr_wrap span {
   position: absolute;
   left: 360px;
   top: 402px;
-  font-size: clamp(1.5625rem, 2vw, 2.5rem);
+  font-size: clamp(1.5625rem, 5vw, 2.5rem);
   color: #fff;
   font-family: "NanumMyeongjo";
   line-height: 150%;
@@ -605,79 +574,4 @@ body main .review_sec .swiper_box #review_swiper .swiper-button-prev {
   left: -30px;
 }
 
-@media screen and (max-width: 1250px) {
-  body {
-    min-width: 1023px;
-  }
-  body main * section {
-    padding: 0 30px;
-  }
-  body main .main_bnr #main_swiper .swiper-wrapper .swiper-slide span {
-    left: 146px;
-  }
-  body main .best_sec {
-    display: flex;
-    flex-flow: column nowrap;
-  }
-  body main .best_sec .best_left_wrap {
-    position: static;
-    aspect-ratio: 1250/407;
-    max-width: 1250px;
-    background-image: url(../images/best_bg_tablet.png);
-    border-radius: 0;
-  }
-  body main .best_sec .best_right_wrap {
-    max-width: 1250px;
-  }
-  body main .best_sec .best_right_wrap .product_wrap .product_row {
-    justify-content: space-evenly;
-  }
-  body main .best_sec .best_right_wrap .product_wrap .product_row .prd_link.card_3, body main .best_sec .best_right_wrap .product_wrap .product_row .prd_link.card_6, body main .best_sec .best_right_wrap .product_wrap .product_row .prd_link.card_9 {
-    display: block;
-  }
-  body main .best_sec .best_right_wrap .product_wrap .product_row .prd_link .product_card .best_prd_img {
-    aspect-ratio: 348/383;
-    width: 348px;
-  }
-  body main .recom_sec .product_wrap .product_row {
-    flex: 1 1 calc(50% - 20px);
-  }
-  body main .recom_sec .product_wrap .product_row .prd_link .product_card > img {
-    aspect-ratio: 348/383;
-    width: 348px;
-  }
-  body main .etsere_bnr .bnr_wrap .bnr_popup {
-    top: 176px;
-    left: 780px;
-  }
-}
-@media screen and (max-width: 1024px) {
-  body {
-    min-width: 320px;
-  }
-  body main * section {
-    padding: 0 15px;
-  }
-  body main .main_bnr #main_swiper .swiper-wrapper .swiper-slide span {
-    left: 46px;
-  }
-  body main .best_sec .best_right_wrap {
-    max-width: 10224px;
-  }
-  body main .best_sec .best_right_wrap .product_wrap .product_row .prd_link.card_3, body main .best_sec .best_right_wrap .product_wrap .product_row .prd_link.card_6, body main .best_sec .best_right_wrap .product_wrap .product_row .prd_link.card_9 {
-    display: none;
-  }
-  body main .best_sec .best_right_wrap .product_wrap .product_row .prd_link .product_card .best_prd_img {
-    aspect-ratio: 248/283;
-    width: 248px;
-  }
-  body main .recom_sec .product_wrap .product_row {
-    justify-content: space-evenly;
-  }
-  body main .recom_sec .product_wrap .product_row .prd_link .product_card > img {
-    aspect-ratio: 248/283;
-    width: 248px;
-  }
-}
-
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=index.css.map */

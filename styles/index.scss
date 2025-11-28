@@ -118,6 +118,7 @@ body {
     main {
         /* 공통 */
         * .prd_link {width: max-content; display: block;}
+        //.card3, .card6, .card9 {display: none;}
         * .sect_title {@include sectionTitle}
         * .prd_name {@include prdTitle}
         * .prd_eng_name {@include prdEng}
@@ -125,6 +126,7 @@ body {
         * .prd_volume {@include prdVol}
         * .price {@include prdPrice}
         * .product_card {@include prdCardFlex}
+        * .best_prd_img {width: 100%; aspect-ratio: 380 / 379; object-fit: cover; display: block;}
         * .more_btn {@include viewMoreBtn; @include fl-row; justify-content: right; width: 100%;}
         * .prd_info {@include flex-col; gap: 12px; justify-content: flex-start; align-items: center; width: 100%;}
         .main_bnr {
@@ -139,7 +141,7 @@ body {
                         span {
                             position: absolute;
                             left: 386px; bottom: 325px;
-                            font-size: 2.5rem; color: #fff;
+                            font-size: clamp(1.5rem, 2vw, 2.5rem); color: #fff;
                             font-family: 'NanumMyeongjo';
                             line-height: 150%;
                             em {
@@ -193,25 +195,35 @@ body {
             }
         }
         .best_sec {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
+            /* display: grid;
+            grid-template-columns: 1fr 2fr; */
+            display: flex; flex-flow: row nowrap;
+            max-width: 1920px;
             .best_left_wrap {
                 @include bg_set;
                 background-image: url(../images/best_bg.png);
-                width: 959px; height: 918px;
+                max-width: 959px; max-height: 918px;
+                width: 100%; min-width: 314px;
+                aspect-ratio: 959 / 918;
                 border-bottom-right-radius: 110px;
                 border-top-right-radius: 110px;
                 position: sticky; top: 0;
             }
             .best_right_wrap {
-                //width: calc(100% - (959px + 60px));
+                max-width: calc(100% - (959px + 60px));
+                width: 100%;
                 padding: 30px 30px 70px 30px;
                 .sect_title {}
                 .more_btn {}
                 .product_wrap {
+                    width: 100%;
                     .product_row {
+                        width: 100%;
                         @include fl-row;
                         .prd_link {
+                            &.card_3,
+                            &.card_6,
+                            &.card_9 {display: none;}
                             .product_card {
                                 .best_prd_img {}
                                 .prd_info {
@@ -222,6 +234,15 @@ body {
 
                             }
                         }
+                    }
+                    .row1 {
+                        .card3 {display: none;}
+                    }
+                    .row2 {
+                        .card6 {display: none;}
+                    }
+                    .row2 {
+                        .card9 {display: none;}
                     }
                 }
             }
@@ -246,9 +267,13 @@ body {
                 margin-top: 60px;
                 .product_row {
                     @include fl-row;
+                    justify-content: space-between;
                     .prd_link {
                         .product_card {
-                            > img {width: 100%;}
+                            > img {
+                                aspect-ratio: 380 / 379;
+                                width: 380px;
+                            }
                             .prd_info {
                                 .prd_tag {
                                     background-color: rgba(14, 162, 102, 0.1);
@@ -271,7 +296,7 @@ body {
                 span {
                     position: absolute;
                     left: 360px; top: 402px;
-                    font-size: clamp(1.5625rem, 5vw, 2.5rem); color: #fff;
+                    font-size: clamp(1.5625rem, 2vw, 2.5rem); color: #fff;
                     font-family: 'NanumMyeongjo';
                     line-height: 150%;
                     em {

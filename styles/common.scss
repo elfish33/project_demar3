@@ -25,7 +25,7 @@
 }
 
 @mixin sectionTitle {
-    font-size: 2.313rem; //37px
+    font-size: clamp(1.5rem, 3vw, 2.313rem); //37px
     font-weight: 500;
     line-height: 100%;
     letter-spacing: -0.02rem;
@@ -33,24 +33,24 @@
     font-family: 'NanumMyeongjo';
 }
 @mixin prdTitle {
-    font-size: 0.875rem; //14px
+    font-size: clamp(0.75rem, 2vw, 0.875rem); //12~ 14px
     line-height: 100%;
     letter-spacing: -0.02rem;
 }
 @mixin prdEng {
-    font-size: 0.875rem; //14px
+    font-size: clamp(0.75rem, 2vw, 0.875rem); //12~ 14px //14px
     line-height: 100%;
     font-weight: 200;
     letter-spacing: -0.02rem;
 }
 @mixin prdPrice {
-    font-size: 1rem; //14px
+    font-size: clamp(0.875rem, 2vw, 1rem); //14~16px
     line-height: 100%;
     font-weight: 200;
     letter-spacing: -0.02rem;
 }
 @mixin prdVol {
-    font-size: 0.75rem; //12px
+    font-size: clamp(0.625rem, 2vw, 0.75rem); //10~12px
     line-height: 100%;
     font-weight: 300;
     letter-spacing: -0.02rem;

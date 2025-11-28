@@ -1,0 +1,149 @@
+//responsive.scss
+@use './common.scss' as *;
+
+// Tablet
+@media screen and (max-width: 1250px) {
+    body {
+        min-width: 1023px;
+        main {
+            * section {padding: 0 30px;}
+            .main_bnr {
+                #main_swiper {
+                    .swiper-wrapper {
+                        .swiper-slide {
+                            span {
+                                left: 146px
+                            }
+                        }
+                    }
+                }
+            }
+            .best_sec {
+                @include flex-col;
+                .best_left_wrap {
+                    position: static;
+                    aspect-ratio: 1250 / 407;
+                    max-width: 1250px;
+                    background-image: url(../images/best_bg_tablet.png);
+                    border-radius: 0;
+                }
+                .best_right_wrap {
+                    max-width: 1250px;
+                    .product_wrap {
+                        .product_row {
+                            justify-content: space-evenly;
+                            .prd_link {
+                                &.card_3,
+                                &.card_6,
+                                &.card_9 {
+                                    display: block;
+                                }
+                                .product_card {
+                                    .best_prd_img {
+                                        aspect-ratio: 348 / 383;
+                                        width: 348px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .recom_sec {
+                .sect_title {}
+                .more_btn {}
+                .product_wrap {
+                    .product_row {
+                        flex: 1 1 calc(50% - 20px);
+                        //@include flex-col;
+                        //justify-content: space-evenly;
+                        .prd_link {
+                            .product_card {
+                                > img {
+                                    aspect-ratio: 348 / 383;
+                                    width: 348px;
+                                }
+                                .prd_info {
+                                    .prd_tag {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .etsere_bnr {
+                .bnr_wrap {
+                    .bnr_popup {
+                        top: 176px; left: 780px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Mobile
+@media screen and (max-width: 1024px) {
+    body {
+        min-width: 320px;
+        main {
+            * section {padding: 0 15px;}
+            .main_bnr {
+                #main_swiper {
+                    .swiper-wrapper {
+                        .swiper-slide {
+                            span {
+                                left: 46px
+                            }
+                        }
+                    }
+                }
+            }
+            .best_sec {
+                .best_right_wrap {
+                    max-width: 10224px;
+                    .product_wrap {
+                        .product_row {
+                            
+                            .prd_link {
+                                &.card_3,
+                                &.card_6,
+                                &.card_9 {
+                                    display: none;
+                                }
+                                .product_card {
+                                    .best_prd_img {
+                                        aspect-ratio: 248 / 283;
+                                        width: 248px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .recom_sec {
+                .sect_title {}
+                .more_btn {}
+                .product_wrap {
+                    .product_row {
+                        justify-content: space-evenly;
+                        .prd_link {
+                            .product_card {
+                                > img {
+                                    aspect-ratio: 248 / 283;
+                                    width: 248px;
+                                }
+                                .prd_info {
+                                    .prd_tag {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
