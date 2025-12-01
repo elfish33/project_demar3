@@ -292,11 +292,12 @@ body {
                 background-image: url(../images/etsere_bnr.jpg);
                 aspect-ratio: 1920 / 915;
                 width: 100%; max-width: 1920px;
+                min-height: 320px;
                 position: relative;
                 span {
                     position: absolute;
-                    left: 360px; top: 402px;
-                    font-size: clamp(1.5625rem, 2vw, 2.5rem); color: #fff;
+                    left: 10%; top: 45%;
+                    font-size: clamp(1.1rem, 2vw, 2.5rem); color: #fff;
                     font-family: 'NanumMyeongjo';
                     line-height: 150%;
                     em {
@@ -311,7 +312,7 @@ body {
                     border-radius: 10px;
                     text-align: center;
                     position: relative;
-                    top: 376px; left: 1280px;
+                    top: 45%; left: 67%;
                     #bnr_plus_btn {
                         position: absolute;
                         top: -15px; left: -10px;
@@ -487,6 +488,58 @@ body {
                         left: -30px;
                         }
                 }
+            }
+        }
+        .footer {
+            background-color: #2A2625;
+            h1, a, p, h3, span, address {color: #fff;}
+            .ft_left {
+                @include flex-col; gap: 23px;
+                align-items: flex-start;
+                justify-content: center;
+                .logo {
+                    > a {
+                        font-size: clamp(1.2rem, 2vw, 1.625rem);
+                        font-family: 'NanumMyeongjo';
+                    }
+                }
+                .cs_center {
+                    p {font-size: clamp(0.8rem, 2vw, 1rem);}
+                    .phone {font-size: clamp(1rem, 2vw, 1.25rem);}
+                }
+                .schedule {
+                    p {font-size: 0.813rem;}
+                }
+                .official {
+                    img {}
+                    p {}
+                }
+            }
+            .ft_right {
+                @include flex-col; gap: 20px;
+                align-items: flex-start;
+                justify-content: center;
+                .ft_menu {
+                    .ft_menu_list {
+                        @include fl-row; gap: 22px;
+                        
+                        > li {
+                            > a {}
+                        }
+                    }
+                }
+                .basic_info {
+                    @include flex-col; gap: 8px;
+                    h3 {font-size: 0.75rem;}
+                    span {font-size: 0.75rem;}
+                }
+                address {font-size: 0.75rem;}
+                span {font-size: 0.75rem;}
+                .fax_hosting {font-size: 0.75rem;}
+                .ask_wrap {
+                    span {font-size: 0.75rem;}
+                }
+                .copyright {font-size: 0.75rem;}
             }
         }
     }

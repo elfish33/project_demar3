@@ -75,7 +75,13 @@
             .etsere_bnr {
                 .bnr_wrap {
                     .bnr_popup {
-                        top: 176px; left: 780px;
+                        //top: 176px; left: 780px;
+                        top: 25%; left: 70%;
+                        width: 140px; height: 200px;
+                        padding: 10px;
+                        img  {
+                            width: 70px;
+                        }
                     }
                 }
             }

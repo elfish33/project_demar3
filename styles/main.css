@@ -410,13 +410,14 @@ body main .etsere_bnr .bnr_wrap {
   aspect-ratio: 1920/915;
   width: 100%;
   max-width: 1920px;
+  min-height: 320px;
   position: relative;
 }
 body main .etsere_bnr .bnr_wrap span {
   position: absolute;
-  left: 360px;
-  top: 402px;
-  font-size: clamp(1.5625rem, 2vw, 2.5rem);
+  left: 10%;
+  top: 45%;
+  font-size: clamp(1.1rem, 2vw, 2.5rem);
   color: #fff;
   font-family: "NanumMyeongjo";
   line-height: 150%;
@@ -434,8 +435,8 @@ body main .etsere_bnr .bnr_wrap .bnr_popup {
   border-radius: 10px;
   text-align: center;
   position: relative;
-  top: 376px;
-  left: 1280px;
+  top: 45%;
+  left: 67%;
 }
 body main .etsere_bnr .bnr_wrap .bnr_popup #bnr_plus_btn {
   position: absolute;
@@ -604,6 +605,70 @@ body main .review_sec .swiper_box #review_swiper .swiper-button-next {
 body main .review_sec .swiper_box #review_swiper .swiper-button-prev {
   left: -30px;
 }
+body main .footer {
+  background-color: #2A2625;
+}
+body main .footer h1, body main .footer a, body main .footer p, body main .footer h3, body main .footer span, body main .footer address {
+  color: #fff;
+}
+body main .footer .ft_left {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 23px;
+  align-items: flex-start;
+  justify-content: center;
+}
+body main .footer .ft_left .logo > a {
+  font-size: clamp(1.2rem, 2vw, 1.625rem);
+  font-family: "NanumMyeongjo";
+}
+body main .footer .ft_left .cs_center p {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+body main .footer .ft_left .cs_center .phone {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+body main .footer .ft_left .schedule p {
+  font-size: 0.813rem;
+}
+body main .footer .ft_right {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+}
+body main .footer .ft_right .ft_menu .ft_menu_list {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 22px;
+}
+body main .footer .ft_right .basic_info {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+}
+body main .footer .ft_right .basic_info h3 {
+  font-size: 0.75rem;
+}
+body main .footer .ft_right .basic_info span {
+  font-size: 0.75rem;
+}
+body main .footer .ft_right address {
+  font-size: 0.75rem;
+}
+body main .footer .ft_right span {
+  font-size: 0.75rem;
+}
+body main .footer .ft_right .fax_hosting {
+  font-size: 0.75rem;
+}
+body main .footer .ft_right .ask_wrap span {
+  font-size: 0.75rem;
+}
+body main .footer .ft_right .copyright {
+  font-size: 0.75rem;
+}
 
 @media screen and (max-width: 1250px) {
   body {
@@ -647,8 +712,14 @@ body main .review_sec .swiper_box #review_swiper .swiper-button-prev {
     width: 348px;
   }
   body main .etsere_bnr .bnr_wrap .bnr_popup {
-    top: 176px;
-    left: 780px;
+    top: 25%;
+    left: 70%;
+    width: 140px;
+    height: 200px;
+    padding: 10px;
+  }
+  body main .etsere_bnr .bnr_wrap .bnr_popup img {
+    width: 70px;
   }
 }
 @media screen and (max-width: 1024px) {
