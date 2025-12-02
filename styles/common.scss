@@ -49,6 +49,13 @@
     font-weight: 200;
     letter-spacing: -0.02rem;
 }
+@mixin delPrice {
+    font-size: clamp(0.75rem, 2vw, 0.875rem); //12~ 14px //14px
+    line-height: 100%;
+    font-weight: 300;
+    letter-spacing: -0.02rem;
+    color: #BDBDBD;
+}
 @mixin prdVol {
     font-size: clamp(0.625rem, 2vw, 0.75rem); //10~12px
     line-height: 100%;
@@ -91,28 +98,4 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-footer {
-    background-color: #2A2625;
-    .ft_left {
-        @include flex-col; gap: 23px;
-        align-items: flex-start;
-        justify-content: center;
-        .logo {
-            a {}
-        }
-        .cs_center {
-            p {}
-            .phone {}
-        }
-        .schedule {
-            p {}
-        }
-        .official {
-            img {}
-            p {}
-        }
-    }
-    .ft_right {}
 }

@@ -1,20 +1,66 @@
 //responsive.scss
 @use './common.scss' as *;
 
-// Tablet
+//Tablet 1
+@media screen and (max-width: 1549px) {
+    body {
+        main {
+            * section {padding: 0 30px;}
+            .recom_sec {
+                padding: 30px;
+                .product_wrap {
+                    .product_row {
+                        .link4 {display: none;}
+                    }
+                }
+            }
+            .new_sec {
+                padding: 0 30px;
+                img {
+                    aspect-ratio: 348 / 383;
+                    width: 348px;
+                }
+            }
+            .essential_sec {
+                flex-flow: column nowrap;
+                .left_wrap {
+                    @include bg_set;
+                    background-image: url(../images/essential_bnr_tablet.png);
+                    border-radius: 0;
+                    aspect-ratio: 1549 / 364;
+                    max-width: 1549px; width: 100%;
+                    min-width: 440px;
+                    max-height: 364px;
+                }
+                .right_wrap {
+                    max-width: unset;
+                }
+            }
+            .review_sec {
+                padding: 30px;
+            }
+        }
+        
+    }
+}
+
+// Tablet 2
 @media screen and (max-width: 1250px) {
     body {
         min-width: 1023px;
         main {
-            * section {padding: 0 30px;}
             .main_bnr {
                 #main_swiper {
                     .swiper-wrapper {
                         .swiper-slide {
                             span {
-                                left: 146px
+                                left: 146px; top: 230px;
                             }
                         }
+                        .main_bnr1 {background-image: url(../images/main_bnr_tablet_001.jpg);}
+                        .main_bnr2 {background-image: url(../images/main_bnr_tablet_002.jpg);}
+                        .main_bnr3 {background-image: url(../images/main_bnr_tablet_003.jpg);}
+                        .main_bnr4 {background-image: url(../images/main_bnr_tablet_004.jpg);}
                     }
                 }
             }
@@ -29,6 +75,7 @@
                 }
                 .best_right_wrap {
                     max-width: 1250px;
+                    padding: 15px 15px 30px 15px;
                     .product_wrap {
                         .product_row {
                             justify-content: space-evenly;
@@ -86,6 +133,13 @@
                 }
             }
         }
+        footer {
+            flex-flow: column nowrap;
+            padding: 30px;
+            .ft_left {
+                .official {display: none;}
+            }
+        }
     }
 }
 
@@ -108,10 +162,9 @@
             }
             .best_sec {
                 .best_right_wrap {
-                    max-width: 10224px;
+                    max-width: 1024px;
                     .product_wrap {
                         .product_row {
-                            
                             .prd_link {
                                 &.card_3,
                                 &.card_6,
@@ -120,8 +173,8 @@
                                 }
                                 .product_card {
                                     .best_prd_img {
-                                        aspect-ratio: 248 / 283;
-                                        width: 248px;
+                                        aspect-ratio: 200 / 283;
+                                        width: 200px;
                                     }
                                 }
                             }
@@ -130,6 +183,7 @@
                 }
             }
             .recom_sec {
+                padding: 15px;
                 .sect_title {}
                 .more_btn {}
                 .product_wrap {
@@ -138,11 +192,49 @@
                         .prd_link {
                             .product_card {
                                 > img {
-                                    aspect-ratio: 248 / 283;
-                                    width: 248px;
+                                    aspect-ratio: 200 / 283;
+                                    width: 200px;
                                 }
                                 .prd_info {
                                     .prd_tag {
+                                    }
+                                }
+                            }
+                        }
+                        .link3 {display: none;}
+                    }
+                    .row3 {display: flex;}
+                }
+            }
+            .etsere_bnr {
+                .bnr_wrap {
+                    > span {
+                        max-width: 146px;
+                    }
+                }
+            }
+            .new_sec {
+                img {
+                    aspect-ratio: 200 / 283;
+                    width: 200px;
+                }
+            }
+            .essential_sec {
+                img {
+                    aspect-ratio: 200 / 283;
+                    width: 200px;
+                }
+            }
+            .review_sec {
+                padding: 15px;
+                .swiper_box {
+                    #review_swiper {
+                        .swiper-wrapper {
+                            .swiper-slide  {
+                                .review_info  {
+                                    .stars_name_date {
+                                        //justify-content: space-around;
+                                        .score_name {gap: 4px;}
                                     }
                                 }
                             }
@@ -151,5 +243,6 @@
                 }
             }
         }
+        
     }
 }

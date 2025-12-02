@@ -3,12 +3,15 @@ footer {
     background-color: #2A2625;
     display: flex; flex-flow: row nowrap;
     justify-content: space-between;
+    gap: 15px;
     padding: 50px 220px;
+    width: 100%;
+    max-width: 1920px;
 }
 footer a, footer span, 
 footer h1, footer h3, 
 footer address, footer p {
-    color: #fff; font-size: 0.75rem;
+    color: #fff; font-size: clamp(0.625rem, 0.9vw, 0.75rem);
     line-height: 130%;
 }
 footer .ft_left {
@@ -19,7 +22,7 @@ footer .ft_left {
 }
 footer .ft_left .logo a {
     font-family: 'NanumMyeongjo';
-    font-size: clamp(1.2rem, 2vw, 1.625rem);
+    font-size: clamp(1.2rem, 1.3vw, 1.625rem);
 }
 
 footer .ft_left .cs_center {
@@ -28,11 +31,11 @@ footer .ft_left .cs_center {
 }
 
 footer .ft_left .cs_center p {
-    font-size: clamp(0.8rem, 2vw, 1rem);
+    font-size: clamp(0.8rem, 0.9vw, 1rem);
 }
 
 footer .ft_left .cs_center p.phone {
-    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-size: clamp(1rem, 0.9vw, 1.25rem);
 }
 
 footer .ft_left .schedule {
@@ -73,7 +76,7 @@ footer .ft_right .ft_menu .ft_menu_list li {
 }
 
 footer .ft_right .ft_menu .ft_menu_list li a {
-    font-size: 0.938rem; font-weight: 600;
+    font-size: clamp(0.813rem, 0.9vw, 0.938rem); font-weight: 600;
 }
 
 footer .ft_right .basic_info {
