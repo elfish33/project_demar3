@@ -1,0 +1,113 @@
+
+footer {
+    background-color: #2A2625;
+    display: flex; flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 50px 220px;
+}
+footer a, footer span, 
+footer h1, footer h3, 
+footer address, footer p {
+    color: #fff; font-size: 0.75rem;
+    line-height: 130%;
+}
+footer .ft_left {
+    display: flex; flex-flow: column nowrap;
+    gap: 23px;
+    align-items: flex-start;
+    justify-content: center;
+}
+footer .ft_left .logo a {
+    font-family: 'NanumMyeongjo';
+    font-size: clamp(1.2rem, 2vw, 1.625rem);
+}
+
+footer .ft_left .cs_center {
+    display: flex; flex-flow: column nowrap;
+    gap: 4px;
+}
+
+footer .ft_left .cs_center p {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+footer .ft_left .cs_center p.phone {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+footer .ft_left .schedule {
+    display: flex; flex-flow: column nowrap;
+    gap: 4px;
+}
+
+footer .ft_left .schedule p {
+}
+
+footer .ft_left .official {
+    display: flex; flex-flow: row nowrap;
+    gap: 10px; justify-content: flex-start;
+    align-items: center;
+}
+
+footer .ft_left .official img {
+}
+
+footer .ft_left .official p {
+    line-height: 160%;
+}
+
+footer .ft_right {
+    display: flex; flex-flow: column nowrap;
+    gap: 10px; align-items: flex-start;
+    justify-content: center;
+}
+footer .ft_right .ft_menu {
+}
+
+footer .ft_right .ft_menu .ft_menu_list {
+    display: flex; flex-flow: row nowrap;
+    gap: 22px;
+}
+
+footer .ft_right .ft_menu .ft_menu_list li {
+}
+
+footer .ft_right .ft_menu .ft_menu_list li a {
+    font-size: 0.938rem; font-weight: 600;
+}
+
+footer .ft_right .basic_info {
+    display: flex; flex-flow: row nowrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+footer .ft_right .basic_info h3 {
+}
+
+footer .ft_right .basic_info span {
+}
+
+footer .ft_right address {
+}
+
+
+footer .ft_right > span {
+}
+
+footer .ft_right .fax_hosting {
+    display: flex; flex-flow: row nowrap;
+    gap: 10px;
+}
+
+footer .ft_right .fax_hosting span {
+}
+
+footer .ft_right .ask_wrap {
+}
+
+footer .ft_right .ask_wrap span {
+}
+
+footer .ft_right .copyright {
+}

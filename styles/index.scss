@@ -1,6 +1,7 @@
 @use './common.scss' as *;
 
 body {
+
     max-width: 1920px; width: 100%;
     header {
         padding: 30px;
@@ -202,7 +203,7 @@ body {
             .best_left_wrap {
                 @include bg_set;
                 background-image: url(../images/best_bg.png);
-                max-width: 959px; max-height: 918px;
+                max-width: 900px; max-height: 100vh;
                 width: 100%; min-width: 314px;
                 aspect-ratio: 959 / 918;
                 border-bottom-right-radius: 110px;
@@ -490,57 +491,6 @@ body {
                 }
             }
         }
-        .footer {
-            background-color: #2A2625;
-            h1, a, p, h3, span, address {color: #fff;}
-            .ft_left {
-                @include flex-col; gap: 23px;
-                align-items: flex-start;
-                justify-content: center;
-                .logo {
-                    > a {
-                        font-size: clamp(1.2rem, 2vw, 1.625rem);
-                        font-family: 'NanumMyeongjo';
-                    }
-                }
-                .cs_center {
-                    p {font-size: clamp(0.8rem, 2vw, 1rem);}
-                    .phone {font-size: clamp(1rem, 2vw, 1.25rem);}
-                }
-                .schedule {
-                    p {font-size: 0.813rem;}
-                }
-                .official {
-                    img {}
-                    p {}
-                }
-            }
-            .ft_right {
-                @include flex-col; gap: 20px;
-                align-items: flex-start;
-                justify-content: center;
-                .ft_menu {
-                    .ft_menu_list {
-                        @include fl-row; gap: 22px;
-                        
-                        > li {
-                            > a {}
-                        }
-                    }
-                }
-                .basic_info {
-                    @include flex-col; gap: 8px;
-                    h3 {font-size: 0.75rem;}
-                    span {font-size: 0.75rem;}
-                }
-                address {font-size: 0.75rem;}
-                span {font-size: 0.75rem;}
-                .fax_hosting {font-size: 0.75rem;}
-                .ask_wrap {
-                    span {font-size: 0.75rem;}
-                }
-                .copyright {font-size: 0.75rem;}
-            }
-        }
+        
     }
 }

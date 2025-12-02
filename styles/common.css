@@ -1,0 +1,10 @@
+footer {
+  background-color: #2A2625;
+}
+footer .ft_left {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 23px;
+  align-items: flex-start;
+  justify-content: center;
+}/*# sourceMappingURL=common.css.map */

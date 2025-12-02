@@ -1,0 +1,80 @@
+@media screen and (max-width: 1250px) {
+  body {
+    min-width: 1023px;
+  }
+  body main * section {
+    padding: 0 30px;
+  }
+  body main .main_bnr #main_swiper .swiper-wrapper .swiper-slide span {
+    left: 146px;
+  }
+  body main .best_sec {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  body main .best_sec .best_left_wrap {
+    position: static;
+    aspect-ratio: 1250/407;
+    max-width: 1250px;
+    background-image: url(../images/best_bg_tablet.png);
+    border-radius: 0;
+  }
+  body main .best_sec .best_right_wrap {
+    max-width: 1250px;
+  }
+  body main .best_sec .best_right_wrap .product_wrap .product_row {
+    justify-content: space-evenly;
+  }
+  body main .best_sec .best_right_wrap .product_wrap .product_row .prd_link.card_3, body main .best_sec .best_right_wrap .product_wrap .product_row .prd_link.card_6, body main .best_sec .best_right_wrap .product_wrap .product_row .prd_link.card_9 {
+    display: block;
+  }
+  body main .best_sec .best_right_wrap .product_wrap .product_row .prd_link .product_card .best_prd_img {
+    aspect-ratio: 348/383;
+    width: 348px;
+  }
+  body main .recom_sec .product_wrap .product_row {
+    flex: 1 1 calc(50% - 20px);
+  }
+  body main .recom_sec .product_wrap .product_row .prd_link .product_card > img {
+    aspect-ratio: 348/383;
+    width: 348px;
+  }
+  body main .etsere_bnr .bnr_wrap .bnr_popup {
+    top: 25%;
+    left: 70%;
+    width: 140px;
+    height: 200px;
+    padding: 10px;
+  }
+  body main .etsere_bnr .bnr_wrap .bnr_popup img {
+    width: 70px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  body {
+    min-width: 320px;
+  }
+  body main * section {
+    padding: 0 15px;
+  }
+  body main .main_bnr #main_swiper .swiper-wrapper .swiper-slide span {
+    left: 46px;
+  }
+  body main .best_sec .best_right_wrap {
+    max-width: 10224px;
+  }
+  body main .best_sec .best_right_wrap .product_wrap .product_row .prd_link.card_3, body main .best_sec .best_right_wrap .product_wrap .product_row .prd_link.card_6, body main .best_sec .best_right_wrap .product_wrap .product_row .prd_link.card_9 {
+    display: none;
+  }
+  body main .best_sec .best_right_wrap .product_wrap .product_row .prd_link .product_card .best_prd_img {
+    aspect-ratio: 248/283;
+    width: 248px;
+  }
+  body main .recom_sec .product_wrap .product_row {
+    justify-content: space-evenly;
+  }
+  body main .recom_sec .product_wrap .product_row .prd_link .product_card > img {
+    aspect-ratio: 248/283;
+    width: 248px;
+  }
+}/*# sourceMappingURL=responsive.css.map */

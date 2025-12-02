@@ -5,7 +5,7 @@ body {
 }
 body header {
   padding: 30px;
-  background-color: transparent;
+  background-color: #0EA266;
   position: absolute;
   top: 0;
   left: 0;
@@ -49,14 +49,15 @@ body header .left_nav .gnb_wrap #gnb {
   display: flex;
   flex-flow: column nowrap;
   gap: 25px;
+  /* 라인별 등등 */
+}
+body header .left_nav .gnb_wrap #gnb .gnb_menu_title {
+  /* Global Menu Name */
 }
 body header .left_nav .gnb_wrap #gnb .gnb_menu_title > a {
   font-weight: 500;
   letter-spacing: -0.02rem;
   color: #594632;
-}
-body header .left_nav .gnb_wrap #gnb .gnb_menu_title {
-  /* Global Menu Name */
 }
 body header .left_nav .gnb_wrap #gnb .gnb_menu_title .gnb_sub {
   display: flex;
@@ -79,9 +80,6 @@ body header .left_nav .gnb_wrap #gnb .gnb_menu_title .gnb_sub .menu_category > l
   letter-spacing: -0.02rem;
   font-size: 0.813rem;
   color: #2C2C2C;
-}
-body header .left_nav .gnb_wrap #gnb {
-  /* 라인별 등등 */
 }
 body header .right_nav #right_menu_icons {
   display: flex;
@@ -149,6 +147,7 @@ body main {
   /* 공통 */
 }
 body main * .prd_link {
+  width: -moz-max-content;
   width: max-content;
   display: block;
 }
@@ -172,6 +171,7 @@ body main * .prd_eng_name {
   letter-spacing: -0.02rem;
 }
 body main * .prd_tag {
+  width: -moz-max-content;
   width: max-content;
   height: 22px;
   padding: 4px 15px;
@@ -199,12 +199,14 @@ body main * .product_card {
   justify-content: center;
   align-items: flex-start;
   gap: 12px;
+  width: -moz-max-content;
   width: max-content;
 }
 body main * .best_prd_img {
   width: 100%;
   aspect-ratio: 380/379;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 body main * .more_btn {
@@ -749,6 +751,4 @@ body main .footer .ft_right .copyright {
     aspect-ratio: 248/283;
     width: 248px;
   }
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

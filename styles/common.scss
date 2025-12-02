@@ -92,3 +92,27 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+footer {
+    background-color: #2A2625;
+    .ft_left {
+        @include flex-col; gap: 23px;
+        align-items: flex-start;
+        justify-content: center;
+        .logo {
+            a {}
+        }
+        .cs_center {
+            p {}
+            .phone {}
+        }
+        .schedule {
+            p {}
+        }
+        .official {
+            img {}
+            p {}
+        }
+    }
+    .ft_right {}
+}
